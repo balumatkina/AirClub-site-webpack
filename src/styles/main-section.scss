@@ -1,0 +1,150 @@
+$Raleway: 'Raleway', sans-serif;
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row-jc-sb {
+  @include flex-row;
+  justify-content: space-between;
+}
+
+.main-section {
+  @include flex-row;
+  justify-content: center;
+
+  height: 904px;
+
+  user-select: none;
+
+  // border-style: solid;
+  // border-color: blueviolet; 
+
+    .main-section-wrapper {
+    @include flex-row-jc-sb;
+
+    max-width: 1440px;
+    flex: 1;
+
+    // border-style: solid;
+    // border-color: pink;
+
+    .left-section {
+      max-width: 604px;
+      flex: 1;
+  
+      padding: 64px 0;
+  
+      margin-left: 104px;
+  
+      @include flex-column;
+  
+      // border-style: solid;
+      // border-color: violet; 
+
+      h1 {
+        font-family: $Raleway;
+        font-weight: 800;
+        font-size: 8.5em;
+        line-height: 144px;
+        color: var(--site-light);
+        
+        margin-top: 0;
+        margin-bottom: 0;
+    
+        white-space: nowrap;
+    
+        // border-style: solid;
+        // border-color: black; 
+
+        .yellow-hero-text {
+          color: var(--site-yellow);
+        }
+      }
+    }
+
+    img {
+      height: auto;
+  
+      // border-style: solid;
+      // border-color: black;
+    }
+  }
+}
+
+
+@media screen and (max-width: 440px) {
+  
+  .main-section {
+    height: 595px;
+
+    .main-section-wrapper {
+      max-width: 375px;
+      position: relative;
+
+      .left-section {
+        position: absolute;
+        z-index: 3;
+        max-width: 314px;
+
+        padding: 0;
+        margin-left: 30px;
+
+        h1 {
+          font-size: 4em;
+          line-height: 80px;
+        }
+
+        .paper-plane {
+          position: absolute;
+          left: 0;
+          bottom: -128px;
+
+
+          height: 90px;
+          width: 90px;
+          rotate: 90deg;
+        }
+      }
+
+      img {
+        position: absolute;
+        width: 393px;
+        height: auto;
+        object-fit: contain;
+
+        bottom: 0;
+        right: -136px;
+      }
+    }
+  }
+}
+
+@media screen and (441px <= width <= 1024px) {
+
+  .main-section {
+    height: 624px;
+
+    .main-section-wrapper {
+      max-width: 1024px;
+
+      .left-section {
+        max-width: 436px;
+
+        margin-left: 60px;
+        padding: 24px 0 0 0;
+        
+        h1 {
+          font-size: 96px;
+          line-height: 113px;
+        }
+      }
+    }
+  }
+}
